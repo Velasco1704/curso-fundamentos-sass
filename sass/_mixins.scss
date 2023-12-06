@@ -1,0 +1,14 @@
+@mixin flex($direction, $jc, $al, $fw, $gap) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $jc;
+  align-items: $al;
+  flex-wrap: $fw;
+  gap: $gap;
+}
+
+@mixin setFont ($size, $weight, $color) {
+  font-size: $size;
+  font-weight: $weight;
+  color: $color;
+}

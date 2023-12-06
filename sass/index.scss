@@ -1,0 +1,265 @@
+@use '_reset';
+@import "./variables";
+@import './mixins';
+
+body {
+  background: $primary-color;
+}
+
+// Nav
+
+nav {
+  width: 100%;
+  padding: 2rem 3.5rem;
+  @include flex(row, space-between, center, null, null);
+
+  p {
+    @include setFont(1.5em, 400, $primary-text-color);
+  }
+
+  .nav-icons {
+    @include flex (row, null, null, null, 1.5rem);
+
+    button {
+      cursor: pointer;
+    }
+  }
+}
+
+// Hero
+
+.hero-section {
+  width: auto;
+  margin: 4.70rem 2.5rem 8.20rem;
+  @include flex(row, space-between, null, null, 8rem);
+
+  h1,
+  p {
+    color: $primary-text-color;
+  }
+
+  h1 {
+    @include setFont(3.75em, 600, null);
+    margin-bottom: 3.80rem;
+  }
+
+  p {
+    @include setFont(1.5em, 400, null);
+    max-width: 38rem;
+    margin-bottom: 7rem;
+  }
+
+  button {
+    cursor: pointer;
+    @include setFont(1.4em, 700, #fff);
+    background: $orange;
+    border-radius: 2.1875rem;
+    width: 16.312rem;
+    height: 4.562rem;
+    padding: 1.312rem 5.312rem 1.375rem 2.875rem;
+  }
+
+  .hero__image-container {
+    width: 34.375rem;
+    height: 42.875rem;
+    align-self: center;
+
+    img {
+      height: 100%;
+      border-radius: .5rem;
+    }
+
+  }
+}
+
+// Products
+.products-section {
+  margin: 4.70rem 2.5rem 8.20rem;
+
+  .products-container {
+    h2 {
+      @include setFont(3.125em, 400, $primary-text-color);
+      margin-bottom: 3.75rem;
+    }
+
+    .cards-container {
+      @include flex (row, center, null, wrap, 3rem);
+
+      &--skincare {
+        margin-bottom: 6rem;
+      }
+
+      .card {
+        position: relative;
+        padding: 3.5rem 2.5rem 3rem;
+        border-radius: .5rem;
+        width: 20rem;
+        height: auto;
+
+        &--skincare {
+          background: $secondary-color;
+          color: $primary-text-color;
+        }
+
+        &--furniture {
+          background: $tertiary-color;
+          color: $primary-color;
+        }
+
+        img {
+          height: 18rem;
+          margin-bottom: 1rem;
+          border-radius: inherit;
+        }
+
+        h3 {
+          @include setFont(1.562em, 600, null);
+        }
+
+        p {
+          @include setFont(0.937em, 400, null);
+        }
+
+        button {
+          cursor: pointer;
+          position: absolute;
+          top: .87rem;
+          right: .94rem;
+        }
+      }
+    }
+  }
+}
+
+//Info
+
+.info-section {
+  padding: 0 4rem;
+
+  .info__about {
+    padding: 0 4rem;
+    margin-bottom: 15rem;
+
+    h2 {
+      @include setFont(3.125em, 500, $primary-text-color);
+      margin-bottom: 10rem
+    }
+
+    .about__container {
+      @include flex(row, space-between, center, null, null);
+      padding: 0 3rem;
+
+      .about__card {
+        @include flex(row, center, center, null, 0rem);
+
+        &--earth {
+          p {
+            width: 22rem;
+          }
+        }
+
+        &--innovation {
+          p {
+            width: 18rem;
+          }
+        }
+
+        img {
+          width: 10rem;
+          height: 10rem;
+        }
+
+        p {
+          @include setFont(1.875em, 500, $orange);
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  .info__gallery {
+    margin-bottom: 7rem;
+
+    h2 {
+      @include setFont(3.125em, 500, $primary-text-color);
+      margin-bottom: 4rem
+    }
+
+    .gallery__container {
+      @include flex(row, center, center, wrap, 3.5rem);
+
+      img {
+        width: 24rem;
+        height: 24rem;
+        border-radius: 1rem;
+      }
+
+    }
+  }
+
+  .info__location {
+    margin-bottom: 20rem;
+
+    h2 {
+      @include setFont(3.125em, 500, $primary-text-color);
+      margin-bottom: 4rem;
+    }
+
+    .location__container {
+      @include flex(column, center, null, null, 1rem);
+      width: 100%;
+      max-width: 90rem;
+      margin: 0 auto;
+      @include setFont(null, 400, $orange);
+
+      img {
+        margin: 0 auto;
+        width: 100%;
+        height: 30rem;
+      }
+
+      h4 {
+        font-size: 2.187em;
+      }
+
+      p {
+        font-size: 1.562em;
+      }
+    }
+  }
+}
+
+// Footer
+
+footer {
+  background: $orange;
+  width: 100%;
+  height: 24rem;
+
+  .links-container {
+    @include setFont(null, 500, #fff);
+    padding: 2rem 4rem;
+
+    h4 {
+      font-size: 1.87em;
+      margin-bottom: 2rem;
+    }
+
+    ul {
+      font-size: 1.25em;
+
+      li {
+        margin-bottom: 1.3rem;
+      }
+    }
+  }
+
+  .social-media {
+    @include flex(row, center, center, null, 2rem);
+
+    img {
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+}
